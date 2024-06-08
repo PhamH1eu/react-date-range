@@ -192,7 +192,9 @@ class Calendar extends PureComponent {
     const styles = this.styles;
     return (
       <div onMouseUp={e => e.stopPropagation()} className={styles.monthAndYearWrapper}>
-        {/* {showMonthArrow ? (
+
+        
+        {showMonthArrow ? (
           <button
             type="button"
             className={classnames(styles.nextPrevButton, styles.prevButton)}
@@ -200,7 +202,7 @@ class Calendar extends PureComponent {
             aria-label={ariaLabels.prevButton}>
             <i />
           </button>
-        ) : null} */}
+        ) : null}
         {showMonthAndYearPickers ? (
           <span className={styles.monthAndYearPickers}>
             <span className={styles.monthPicker}>
@@ -239,7 +241,7 @@ class Calendar extends PureComponent {
             {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
           </span>
         )}
-        {/* {showMonthArrow ? (
+        {showMonthArrow ? (
           <button
             type="button"
             className={classnames(styles.nextPrevButton, styles.nextButton)}
@@ -247,7 +249,67 @@ class Calendar extends PureComponent {
             aria-label={ariaLabels.nextButton}>
             <i />
           </button>
-        ) : null} */}
+        ) : null}
+
+
+{showMonthArrow ? (
+          <button
+            type="button"
+            className={classnames(styles.nextPrevButton, styles.prevButton)}
+            onClick={() => changeShownDate(-1, 'monthOffset')}
+            aria-label={ariaLabels.prevButton}>
+            <i />
+          </button>
+        ) : null}
+        {showMonthAndYearPickers ? (
+          <span className={styles.monthAndYearPickers}>
+            <span className={styles.monthPicker}>
+              <select
+                value={focusedDate.getMonth()}
+                onChange={e => changeShownDate(e.target.value, 'setMonth')}
+                aria-label={ariaLabels.monthPicker}>
+                {this.state.monthNames.map((monthName, i) => (
+                  <option key={i} value={i}>
+                    {monthName}
+                  </option>
+                ))}
+              </select>
+            </span>
+            <span className={styles.monthAndYearDivider} />
+            <span className={styles.yearPicker}>
+              <select
+                value={focusedDate.getFullYear()}
+                onChange={e => changeShownDate(e.target.value, 'setYear')}
+                aria-label={ariaLabels.yearPicker}>
+                {new Array(upperYearLimit - lowerYearLimit + 1)
+                  .fill(upperYearLimit)
+                  .map((val, i) => {
+                    const year = val - i;
+                    return (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
+                    );
+                  })}
+              </select>
+            </span>
+          </span>
+        ) : (
+          <span className={styles.monthAndYearPickers}>
+            {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
+          </span>
+        )}
+        {showMonthArrow ? (
+          <button
+            type="button"
+            className={classnames(styles.nextPrevButton, styles.nextButton)}
+            onClick={() => changeShownDate(+1, 'monthOffset')}
+            aria-label={ariaLabels.nextButton}>
+            <i />
+          </button>
+        ) : null}
+
+
       </div>
     );
   };
