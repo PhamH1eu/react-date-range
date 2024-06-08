@@ -192,7 +192,7 @@ class Calendar extends PureComponent {
     const styles = this.styles;
     return (
       <div onMouseUp={e => e.stopPropagation()} className={styles.monthAndYearWrapper}>
-        {showMonthArrow ? (
+        {/* {showMonthArrow ? (
           <button
             type="button"
             className={classnames(styles.nextPrevButton, styles.prevButton)}
@@ -200,7 +200,7 @@ class Calendar extends PureComponent {
             aria-label={ariaLabels.prevButton}>
             <i />
           </button>
-        ) : null}
+        ) : null} */}
         {showMonthAndYearPickers ? (
           <span className={styles.monthAndYearPickers}>
             <span className={styles.monthPicker}>
@@ -239,7 +239,7 @@ class Calendar extends PureComponent {
             {this.state.monthNames[focusedDate.getMonth()]} {focusedDate.getFullYear()}
           </span>
         )}
-        {showMonthArrow ? (
+        {/* {showMonthArrow ? (
           <button
             type="button"
             className={classnames(styles.nextPrevButton, styles.nextButton)}
@@ -247,7 +247,7 @@ class Calendar extends PureComponent {
             aria-label={ariaLabels.nextButton}>
             <i />
           </button>
-        ) : null}
+        ) : null} */}
       </div>
     );
   };

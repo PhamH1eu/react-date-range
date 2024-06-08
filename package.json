@@ -38,6 +38,7 @@
     "defaults"
   ],
   "dependencies": {
+    "ajv": "^8.16.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react-list": "^0.8.13",
