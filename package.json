@@ -1,6 +1,6 @@
 {
-  "name": "@hieuph/react-date-range",
-  "version": "2.0.2",
+  "name": "@PhamH1eu/react-date-range",
+  "version": "2.0.1",
   "description": "A React component for choosing dates and date ranges.",
   "main": "dist/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/hypeserver/react-date-range"
+    "url": "git+https://github.com/PhamH1eu/react-date-range.git"
   },
   "bugs": {
     "url": "http://github.com/hypeserver/react-date-range/issues"
